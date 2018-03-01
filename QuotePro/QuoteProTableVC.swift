@@ -8,35 +8,52 @@
 
 import UIKit
 
-class QuoteProTableVC: UITableViewController {
+class QuoteProTableVC: UITableViewController, QuoteBuilderVCDelegate  {
+    
 
+    
+    var quotesArray = [UserQuotesPhotos]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
     }
 
-    
+    func didSaveQuote(userQuotesPhotos: UserQuotesPhotos) {
+        
+        quotesArray.append(userQuotesPhotos)
+        tableView.reloadData()
+    }
+        
+        
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        return 0
+        return self.quotesArray.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "quoteCell", for: indexPath) as! QuoteCell
+        
+        let userQuote = quotesArray[indexPath.row]
+        cell.userQuotesPhotos = userQuote
+        
         return cell
     }
-    */
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let image = quotesArray[indexPath.row]
+        let imageToShare = [image]
+        
+        let activityViewController = UIActivityViewController(activityItems: imageToShare, applicationActivities: nil)
+        activityViewController.popoverPresentationController?.sourceView = self.view //so that ipads won't crash
+        
+        self.present(activityViewController, animated: true, completion: nil)
+    }
 
     /*
     // Override to support conditional editing of the table view.
@@ -73,14 +90,19 @@ class QuoteProTableVC: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "buildQuote", let destination = segue.destination as? QuoteBuilderVC {
+            destination.delegate = self
+        }
+        
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
+ 
 
 }
