@@ -33,7 +33,7 @@
                     <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p0B-d9-xx5">
-                    <rect key="frame" x="16" y="135.5" width="343" height="21"/>
+                    <rect key="frame" x="16" y="125" width="343" height="21"/>
                     <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="19"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
@@ -48,7 +48,7 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="p0B-d9-xx5" secondAttribute="trailing" constant="16" id="Grz-yb-kZ9"/>
-                <constraint firstItem="p0B-d9-xx5" firstAttribute="top" secondItem="4ER-tV-Aor" secondAttribute="bottom" constant="35" id="HL7-Kt-sFJ"/>
+                <constraint firstItem="p0B-d9-xx5" firstAttribute="top" secondItem="4ER-tV-Aor" secondAttribute="bottom" constant="25" id="HL7-Kt-sFJ"/>
                 <constraint firstItem="4ER-tV-Aor" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="72.5" id="LBZ-Kw-OtV"/>
                 <constraint firstItem="4ER-tV-Aor" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" constant="-8" id="M0m-qC-Xba"/>
                 <constraint firstItem="p0B-d9-xx5" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="N6x-S9-X94"/>
