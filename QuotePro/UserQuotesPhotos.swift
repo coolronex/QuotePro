@@ -10,10 +10,10 @@ import UIKit
 
 class UserQuotesPhotos: NSObject {
 
-    var image: Photo
+    var image: UIImage
     var quote: Quote
     
-    init(image: Photo, quote: Quote) {
+    init(image: UIImage, quote: Quote) {
         
         self.image = image
         self.quote = quote

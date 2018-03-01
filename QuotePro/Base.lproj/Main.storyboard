@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZkU-Qo-JgC">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,43 +15,36 @@
             <objects>
                 <tableViewController id="1mk-FS-9Ru" customClass="QuoteProTableVC" customModule="QuotePro" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="tFF-he-Mvf">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="quoteCell" rowHeight="71" id="3Yw-o5-0ia" customClass="QuoteCell" customModule="QuotePro" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="71"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="quoteCell" rowHeight="284" id="3Yw-o5-0ia" customClass="QuoteCell" customModule="QuotePro" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="284"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3Yw-o5-0ia" id="bLr-gi-Zye">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="70.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="283.66666666666669"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quote" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YZG-CA-SUQ">
-                                            <rect key="frame" x="16" y="11" width="343" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Person Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pDM-Zy-bgM">
-                                            <rect key="frame" x="16" y="40" width="343" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lCm-Uu-nNq">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="284"/>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="YZG-CA-SUQ" secondAttribute="trailing" constant="16" id="1rE-26-sEK"/>
-                                        <constraint firstItem="pDM-Zy-bgM" firstAttribute="leading" secondItem="bLr-gi-Zye" secondAttribute="leading" constant="16" id="2Lo-iP-ie5"/>
-                                        <constraint firstAttribute="trailing" secondItem="pDM-Zy-bgM" secondAttribute="trailing" constant="16" id="7Jo-9t-w6t"/>
-                                        <constraint firstItem="pDM-Zy-bgM" firstAttribute="top" secondItem="YZG-CA-SUQ" secondAttribute="bottom" constant="8" id="d15-el-tuE"/>
-                                        <constraint firstItem="YZG-CA-SUQ" firstAttribute="leading" secondItem="bLr-gi-Zye" secondAttribute="leading" constant="16" id="eLC-1e-Yxc"/>
-                                        <constraint firstAttribute="bottom" secondItem="pDM-Zy-bgM" secondAttribute="bottom" constant="9.5" id="gEr-L1-vYB"/>
-                                        <constraint firstItem="YZG-CA-SUQ" firstAttribute="top" secondItem="bLr-gi-Zye" secondAttribute="top" constant="11" id="h2g-Q3-7Tx"/>
+                                        <constraint firstAttribute="bottom" secondItem="lCm-Uu-nNq" secondAttribute="bottom" constant="-0.33333333333331439" id="Pvh-6k-pcQ"/>
+                                        <constraint firstAttribute="trailing" secondItem="lCm-Uu-nNq" secondAttribute="trailing" id="aUV-Bt-ESa"/>
+                                        <constraint firstItem="lCm-Uu-nNq" firstAttribute="top" secondItem="bLr-gi-Zye" secondAttribute="top" id="io5-mF-OeE"/>
+                                        <constraint firstItem="lCm-Uu-nNq" firstAttribute="leading" secondItem="bLr-gi-Zye" secondAttribute="leading" id="q6V-hK-WdA"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="lCm-Uu-nNq" secondAttribute="bottom" id="J4q-OL-35E"/>
+                                    <constraint firstItem="lCm-Uu-nNq" firstAttribute="top" secondItem="3Yw-o5-0ia" secondAttribute="top" id="Lmc-7k-6Ip"/>
+                                    <constraint firstItem="lCm-Uu-nNq" firstAttribute="leading" secondItem="3Yw-o5-0ia" secondAttribute="leading" id="RJt-sr-QtW"/>
+                                    <constraint firstAttribute="trailing" secondItem="lCm-Uu-nNq" secondAttribute="trailing" id="ybV-Lq-oZy"/>
+                                </constraints>
                                 <connections>
-                                    <outlet property="authorTextLabel" destination="pDM-Zy-bgM" id="aQo-DV-hR2"/>
-                                    <outlet property="quoteTextLabel" destination="YZG-CA-SUQ" id="cee-D3-Bs2"/>
+                                    <outlet property="quoteImageView" destination="lCm-Uu-nNq" id="Tnr-5e-pqJ"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -70,39 +63,39 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lT1-H4-kfz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="448.80000000000001" y="104.7976011994003"/>
+            <point key="canvasLocation" x="447.82608695652175" y="104.34782608695653"/>
         </scene>
         <!--Quote BuilderVC-->
         <scene sceneID="cHR-Bq-7Px">
             <objects>
                 <viewController id="MXg-wl-dtK" customClass="QuoteBuilderVC" customModule="QuotePro" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hrK-5h-W75">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mnG-S7-HKU" customClass="QuoteView" customModule="QuotePro" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="64" width="375" height="295"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="364"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Qym-Ad-USz">
-                                <rect key="frame" x="132" y="429" width="110" height="120"/>
+                                <rect key="frame" x="132" y="498" width="149.33333333333337" height="120"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6G9-pc-KcM">
-                                        <rect key="frame" x="38" y="0.0" width="34" height="30"/>
+                                        <rect key="frame" x="57.666666666666657" y="0.0" width="34" height="30"/>
                                         <state key="normal" title="Save"/>
                                         <connections>
                                             <action selector="saveTapped:" destination="MXg-wl-dtK" eventType="touchUpInside" id="JCK-mR-bd7"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fiK-6o-Jig">
-                                        <rect key="frame" x="0.0" y="45" width="110" height="30"/>
+                                        <rect key="frame" x="19.666666666666657" y="45" width="110" height="30"/>
                                         <state key="normal" title="Generate Quote"/>
                                         <connections>
                                             <action selector="generateQuote:" destination="MXg-wl-dtK" eventType="touchUpInside" id="YdS-fN-Te2"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zum-rK-pMe">
-                                        <rect key="frame" x="0.5" y="90" width="109" height="30"/>
+                                        <rect key="frame" x="20.333333333333343" y="90" width="109" height="30"/>
                                         <state key="normal" title="Generate Image"/>
                                         <connections>
                                             <action selector="generateImage:" destination="MXg-wl-dtK" eventType="touchUpInside" id="n3H-el-Tc6"/>
@@ -140,7 +133,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ZkU-Qo-JgC" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="TEa-mA-5xx">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

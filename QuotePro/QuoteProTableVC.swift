@@ -52,6 +52,7 @@ class QuoteProTableVC: UITableViewController, QuoteBuilderVCDelegate  {
         let activityViewController = UIActivityViewController(activityItems: imageToShare, applicationActivities: nil)
         activityViewController.popoverPresentationController?.sourceView = self.view //so that ipads won't crash
         
+        
         self.present(activityViewController, animated: true, completion: nil)
     }
 

@@ -10,9 +10,8 @@ import UIKit
 
 class QuoteCell: UITableViewCell {
 
-    @IBOutlet weak var quoteTextLabel: UILabel!
-    @IBOutlet weak var authorTextLabel: UILabel!
-
+    @IBOutlet weak var quoteImageView: UIImageView!
+    
     var userQuotesPhotos: UserQuotesPhotos! {
         didSet {
             configureCell()
@@ -32,8 +31,7 @@ class QuoteCell: UITableViewCell {
     
     private func configureCell() {
         
-        quoteTextLabel.text = userQuotesPhotos.quote.quote
-        authorTextLabel.text = userQuotesPhotos.quote.personName
+        quoteImageView.image = userQuotesPhotos.image
     }
 
 }

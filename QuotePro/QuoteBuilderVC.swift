@@ -32,13 +32,26 @@ class QuoteBuilderVC: UIViewController {
     
     @IBAction func saveTapped(_ sender: UIButton) {
         
-        if let savedPhoto = photo, let savedQuote = quote{
-            let newSavedQuote = UserQuotesPhotos(image: savedPhoto, quote: savedQuote)
+        let snappedPhoto = snapshot(view: quoteView)
+    
+        if let savedQuote = quote{
+            let newSavedQuote = UserQuotesPhotos(image: snappedPhoto, quote: savedQuote)
             delegate?.didSaveQuote(userQuotesPhotos: newSavedQuote)
         }
     }
 
-    
+    private func snapshot(view: QuoteView) -> UIImage {
+        
+        UIGraphicsBeginImageContextWithOptions(view.bounds.size, true, 0)
+        view.drawHierarchy(in: view.bounds, afterScreenUpdates: true)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        var result = UIImage()
+        if let snappedImage = image {
+            result = snappedImage
+        }
+        return result
+    }
     
     
 
