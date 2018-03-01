@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import CoreData
 
 protocol QuoteBuilderVCDelegate {
-    func didSaveQuote(userQuotesPhotos: UserQuotesPhotos)
+    func didSaveQuote(userQuotePhoto: UserQuotePhoto)
 }
 
 
@@ -17,8 +18,8 @@ class QuoteBuilderVC: UIViewController {
 
     var quote: Quote?
     var photo: Photo?
-    var userQuotesPhotos: UserQuotesPhotos?
-    var savedQuotesArray = [UserQuotesPhotos]()
+    var userQuotesPhotos: UserQuotePhoto?
+    var savedQuotesArray = [UserQuotePhoto]()
     var delegate: QuoteBuilderVCDelegate?
 
     @IBOutlet weak var quoteView: QuoteView!
@@ -33,13 +34,23 @@ class QuoteBuilderVC: UIViewController {
     @IBAction func saveTapped(_ sender: UIButton) {
         
         let snappedPhoto = snapshot(view: quoteView)
-    
-        if let savedQuote = quote{
-            let newSavedQuote = UserQuotesPhotos(image: snappedPhoto, quote: savedQuote)
-            delegate?.didSaveQuote(userQuotesPhotos: newSavedQuote)
+
+        let newSavedQuote = UserQuotePhoto(image: snappedPhoto)
+        delegate?.didSaveQuote(userQuotePhoto: newSavedQuote)
+        
+    }
+    @IBAction func textColorChangeTapped(_ sender: UIButton) {
+        
+        switch quoteView.quoteTextLabel.textColor{
+        case UIColor.black:
+            quoteView.quoteTextLabel.textColor = UIColor.white
+            quoteView.authorTextLabel.textColor = UIColor.white
+        default:
+            quoteView.quoteTextLabel.textColor = UIColor.black
+            quoteView.authorTextLabel.textColor = UIColor.black
         }
     }
-
+    
     private func snapshot(view: QuoteView) -> UIImage {
         
         UIGraphicsBeginImageContextWithOptions(view.bounds.size, true, 0)

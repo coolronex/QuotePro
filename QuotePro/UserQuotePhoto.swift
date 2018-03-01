@@ -8,14 +8,12 @@
 
 import UIKit
 
-class UserQuotesPhotos: NSObject {
+class UserQuotePhoto: NSObject {
 
     var image: UIImage
-    var quote: Quote
     
-    init(image: UIImage, quote: Quote) {
+    init(image: UIImage) {
         
         self.image = image
-        self.quote = quote
     }
 }

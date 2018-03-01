@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -28,6 +29,9 @@
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lCm-Uu-nNq">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="284"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="lCm-Uu-nNq" secondAttribute="height" multiplier="207:142" id="ARa-BQ-PdN"/>
+                                            </constraints>
                                         </imageView>
                                     </subviews>
                                     <constraints>
@@ -74,31 +78,42 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mnG-S7-HKU" customClass="QuoteView" customModule="QuotePro" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="64" width="414" height="364"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="310"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Qym-Ad-USz">
-                                <rect key="frame" x="132" y="498" width="149.33333333333337" height="120"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Qym-Ad-USz">
+                                <rect key="frame" x="128" y="424" width="158" height="230"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6G9-pc-KcM">
-                                        <rect key="frame" x="57.666666666666657" y="0.0" width="34" height="30"/>
+                                        <rect key="frame" x="58" y="0.0" width="42" height="35"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                         <state key="normal" title="Save"/>
                                         <connections>
                                             <action selector="saveTapped:" destination="MXg-wl-dtK" eventType="touchUpInside" id="JCK-mR-bd7"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fiK-6o-Jig">
-                                        <rect key="frame" x="19.666666666666657" y="45" width="110" height="30"/>
+                                        <rect key="frame" x="11" y="65" width="136" height="35"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                         <state key="normal" title="Generate Quote"/>
                                         <connections>
                                             <action selector="generateQuote:" destination="MXg-wl-dtK" eventType="touchUpInside" id="YdS-fN-Te2"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zum-rK-pMe">
-                                        <rect key="frame" x="20.333333333333343" y="90" width="109" height="30"/>
+                                        <rect key="frame" x="11" y="130" width="136" height="35"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                         <state key="normal" title="Generate Image"/>
                                         <connections>
                                             <action selector="generateImage:" destination="MXg-wl-dtK" eventType="touchUpInside" id="n3H-el-Tc6"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Edp-tG-JXS">
+                                        <rect key="frame" x="0.0" y="195" width="158" height="35"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <state key="normal" title="Change Text Color"/>
+                                        <connections>
+                                            <action selector="textColorChangeTapped:" destination="MXg-wl-dtK" eventType="touchUpInside" id="33f-ub-0cz"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -106,16 +121,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="Qym-Ad-USz" firstAttribute="top" secondItem="mnG-S7-HKU" secondAttribute="bottom" constant="50" id="0bA-pJ-UVG"/>
                             <constraint firstItem="mnG-S7-HKU" firstAttribute="top" secondItem="qrt-SJ-1TI" secondAttribute="top" id="7nQ-Fk-Ok9"/>
-                            <constraint firstItem="qrt-SJ-1TI" firstAttribute="trailing" secondItem="Qym-Ad-USz" secondAttribute="trailing" constant="132.76080833698506" id="Mw5-X8-14a"/>
                             <constraint firstItem="mnG-S7-HKU" firstAttribute="top" secondItem="qrt-SJ-1TI" secondAttribute="top" id="N03-ey-6bv"/>
                             <constraint firstItem="mnG-S7-HKU" firstAttribute="leading" secondItem="qrt-SJ-1TI" secondAttribute="leading" id="VqT-7f-Njd"/>
-                            <constraint firstItem="qrt-SJ-1TI" firstAttribute="bottom" secondItem="Qym-Ad-USz" secondAttribute="bottom" constant="118" id="WiY-9E-ybD"/>
-                            <constraint firstItem="Qym-Ad-USz" firstAttribute="leading" secondItem="qrt-SJ-1TI" secondAttribute="leading" constant="132" id="cGz-dT-MUX"/>
+                            <constraint firstItem="mnG-S7-HKU" firstAttribute="centerX" secondItem="qrt-SJ-1TI" secondAttribute="centerX" id="WYC-gQ-Eiq"/>
+                            <constraint firstItem="Qym-Ad-USz" firstAttribute="centerX" secondItem="qrt-SJ-1TI" secondAttribute="centerX" id="hb5-oS-0Lc"/>
+                            <constraint firstItem="qrt-SJ-1TI" firstAttribute="bottom" secondItem="mnG-S7-HKU" secondAttribute="bottom" constant="362" id="hjN-yG-PIc"/>
                             <constraint firstItem="qrt-SJ-1TI" firstAttribute="trailing" secondItem="mnG-S7-HKU" secondAttribute="trailing" id="nYU-5Y-iZv"/>
                             <constraint firstItem="mnG-S7-HKU" firstAttribute="leading" secondItem="qrt-SJ-1TI" secondAttribute="leading" id="oYQ-Pq-X7e"/>
                             <constraint firstItem="mnG-S7-HKU" firstAttribute="trailing" secondItem="qrt-SJ-1TI" secondAttribute="trailing" id="r6D-UI-dZC"/>
-                            <constraint firstItem="Qym-Ad-USz" firstAttribute="top" secondItem="mnG-S7-HKU" secondAttribute="bottom" constant="70" id="vNW-QP-7QN"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="qrt-SJ-1TI"/>
                     </view>
@@ -125,7 +140,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2nK-qT-qza" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1343" y="105"/>
+            <point key="canvasLocation" x="1342.0289855072465" y="104.34782608695653"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Ri9-lF-IrX">

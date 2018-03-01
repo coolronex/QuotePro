@@ -12,7 +12,7 @@ class QuoteCell: UITableViewCell {
 
     @IBOutlet weak var quoteImageView: UIImageView!
     
-    var userQuotesPhotos: UserQuotesPhotos! {
+    var photoQuote: PhotoQuote! {
         didSet {
             configureCell()
         }
@@ -31,7 +31,10 @@ class QuoteCell: UITableViewCell {
     
     private func configureCell() {
         
-        quoteImageView.image = userQuotesPhotos.image
+        if let data = photoQuote.imageData {
+            let image = UIImage(data: data)
+            quoteImageView.image = image!
+        }
     }
 
 }
